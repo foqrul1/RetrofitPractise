@@ -2,8 +2,11 @@ package com.example.retrofitpractise;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String BASE_URL= "http://services.hanselandpetal.com/";
     TextView tv1;
     ImageView imageView;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tv1 = findViewById(R.id.tv);
         imageView = findViewById(R.id.iv);
+        button = findViewById(R.id.btnmain);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TimePicker.class);
+                startActivity(intent);
+            }
+        });
         Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
