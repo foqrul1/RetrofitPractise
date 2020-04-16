@@ -31,6 +31,7 @@ public class TimePicker extends AppCompatActivity implements TimePickerDialog.On
         Calendar calendar = Calendar.getInstance();
         textView1.setText(calendar.get(Calendar.HOUR)+" : "+calendar.get(Calendar.MINUTE)+" : "+calendar.get(Calendar.SECOND));
         textView2.setText(calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH)+" : "+calendar.get(Calendar.MONTH)+" : "+calendar.get(Calendar.YEAR));
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

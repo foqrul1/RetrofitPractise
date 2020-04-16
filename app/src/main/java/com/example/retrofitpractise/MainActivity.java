@@ -1,7 +1,9 @@
 package com.example.retrofitpractise;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,18 +28,29 @@ public class MainActivity extends AppCompatActivity {
     TextView tv1;
     ImageView imageView;
     Button button;
+    Button button1;
+    AlertDialog.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tv1 = findViewById(R.id.tv);
+
         imageView = findViewById(R.id.iv);
         button = findViewById(R.id.btnmain);
+        button1 = findViewById(R.id.btn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, TimePicker.class);
+                startActivity(intent);
+            }
+        });
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecyclerView.class);
                 startActivity(intent);
             }
         });
@@ -51,6 +64,19 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "response code"+response.code(), Toast.LENGTH_SHORT).show();
                 Log.d("testing ","response code: "+response.code());
                 if(response.isSuccessful()){
+                    Log.d("source code", "status code"+response.code());
+                    builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setTitle("Server Problem");
+                    builder.setMessage("Sorry, Server is Busy Now, Try again a Moment Later");
+                    builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Log.d("testing", "success");
+                            dialog.cancel();
+                        }
+                    });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
                     List<FlowerService> list = response.body();
                     FlowerService flowerService = list.get(1);
                     String photo = flowerService.getPhoto();

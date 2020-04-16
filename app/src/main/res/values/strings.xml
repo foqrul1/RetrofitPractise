@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">RetrofitPractise</string>
+    <string name="dialog_fire_missiles">"Server is Busy Now, Please try Again"</string>
+    <string-array name="countryName">
+        <item>"AFGHANISTAN"</item>
+        <item>"ALBANIA"</item>
+        <item>"ALGERIA"</item>
+        <item>"ANDORRA"</item>
+        <item>"ANGOLA"</item>
+        <item>"ARGENTINA"</item>
+        <item>"ARMENIA"</item>
+        <item>"AUSTRALIA"</item>
+        <item>"AUSTRIA"</item>
+        <item>"AZERBAIJAN"</item>
+        <item>"BAHAMAS"</item>
+    </string-array>
+
+    <string-array name="capital">
+    <item>"KABUL"</item>
+    <item>"TIRANA"</item>
+    <item>"ALGIERS"</item>
+    <item>"ANDORRA LA VELLA"</item>
+    <item>"LUANDA"</item>
+    <item>"SAINT JOHN'S"</item>
+    <item>"BUENOS AIRES"</item>
+    <item>"YEREVAN"</item>
+    <item>"CANBERRA"</item>
+    <item>"VIENNA"</item>
+    <item>"BAKU"</item>
+</string-array>
 </resources>
