@@ -36,15 +36,15 @@ public class MainActivity extends AppCompatActivity {
         flowerResponse.flowerservice().enqueue(new Callback<List<FlowerService>>() {
             @Override
             public void onResponse(Call<List<FlowerService>> call, Response<List<FlowerService>> response) {
-                Toast.makeText(MainActivity.this, "response code"+response.code(), Toast.LENGTH_SHORT).show();
-                Log.d("testing ","response code: "+response.code());
-                if(response.isSuccessful()){
+                Toast.makeText(MainActivity.this, "response code" + response.code(), Toast.LENGTH_SHORT).show();
+                Log.d("testing ", "response code: " + response.code());
+                if (response.isSuccessful()) {
                     List<FlowerService> list = response.body();
                     FlowerService flowerService = list.get(1);
                     String photo = flowerService.getPhoto();
                     tv1.setText(flowerService.getName());
-                    Picasso.get().load(BASE_URL+"photos/"+photo).into(imageView);
-                }else {
+                    Picasso.get().load(BASE_URL + "photos/" + photo).into(imageView);
+                } else {
                     Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                 }
             }
