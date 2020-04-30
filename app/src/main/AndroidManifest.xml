@@ -3,6 +3,7 @@
     package="com.example.retrofitpractise">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission-sdk-23 android:name="android.permission.SET_TIME"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <uses-library android:name="com.google.android.thing"/>
+        <activity android:name=".RecyclerView"></activity>
+        <activity android:name=".TimePicker" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

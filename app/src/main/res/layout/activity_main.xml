@@ -15,10 +15,28 @@
         android:textSize="20sp"
         android:id="@+id/tv"/>
     <ImageView
-        android:layout_width="750px"
-        android:layout_height="750px"
+        android:layout_width="600px"
+        android:layout_height="600px"
         android:layout_gravity="center"
         android:id="@+id/iv"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="change"
+        android:paddingTop="20sp"
+        android:layout_marginTop="20sp"
+        android:id="@+id/btnmain"
+        />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="recycle View"
+        android:paddingTop="20sp"
+        android:layout_marginTop="20sp"
+        android:id="@+id/btn"
+        />
 
 </LinearLayout>
